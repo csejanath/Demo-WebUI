@@ -1,0 +1,26 @@
+.side-bar {
+    display: block;
+    overflow: auto;
+    width: 300px;
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 0 !important;
+    margin: 0;
+}
+
+.dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.modal-input {
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0;
+}
