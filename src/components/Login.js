@@ -37,7 +37,7 @@ class Login extends Component {
     render() {
         return (
             <div className="login-wrapper">
-                <Form className="login-box">
+                <Form className="login-box p-3">
                     <FormGroup>
                         <Label for="exampleEmail">Username</Label>
                         <Input name="userName" type="text" ref="userName" onChange={this.handleInputChange}/>
