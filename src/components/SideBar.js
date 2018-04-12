@@ -58,11 +58,11 @@ class SideBar extends Component {
         return (
             <aside className="side-bar border-right">
                 <ListGroup className="border-0">
-                    <ListGroupItem className="border-bottom" tag="a" href="#">Cras justo odio</ListGroupItem>
-                    <ListGroupItem className="border-bottom" tag="a" href="#">Dapibus ac facilisis in</ListGroupItem>
-                    <ListGroupItem className="border-bottom" tag="a" href="#">Morbi leo risus</ListGroupItem>
-                    <ListGroupItem className="border-bottom" tag="a" href="#">Porta ac consectetur ac</ListGroupItem>
-                    <ListGroupItem className="border-bottom" tag="a" href="#">Vestibulum at eros</ListGroupItem>
+                    <ListGroupItem className="border-bottom" tag="a" href="#">File Name 1</ListGroupItem>
+                    <ListGroupItem className="border-bottom" tag="a" href="#">File Name 2</ListGroupItem>
+                    <ListGroupItem className="border-bottom" tag="a" href="#">File Name 3</ListGroupItem>
+                    <ListGroupItem className="border-bottom" tag="a" href="#">File Name 4</ListGroupItem>
+                    <ListGroupItem className="border-bottom" tag="a" href="#">File Name 5</ListGroupItem>
                 </ListGroup>
                 <div className="d-flex flex-column align-items-stretch p-3">
                     <Button color="primary" onClick={this.toggleRegistrationModal}>Register File</Button>
