@@ -17,11 +17,10 @@ class Header extends Component {
 
         this.props.history.push("/login");
     }
-
     render() {
         return (
             <nav className="header border-bottom">
-                <h6 className="m-0 mr-3">Hello Bob</h6> <a className="text-dark" href="javascript:" onClick={()=>{this.logout()}}>logout</a>
+                <h6 className="m-0 mr-3">Hello Bob</h6> <a className="text-dark" href="#0" onClick={()=>{this.logout()}}>logout</a>
             </nav>
         )
     }
