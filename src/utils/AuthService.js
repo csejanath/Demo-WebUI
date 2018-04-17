@@ -1,47 +1,41 @@
 export default class AuthService {
     constructor(domain) {
-        this.domain = domain || 'http://13.229.127.31:8181';
+        // this.domain = domain || 'http://13.229.127.31:8080/demo-0.0.1-SNAPSHOT';
+        this.domain = domain || '';
         this.fetch = this.fetch.bind(this);
         this.login = this.login.bind(this);
         AuthService.getProfile = AuthService.getProfile.bind(this);
     }
 
-    login(email, password) {
+    login(username, password) {
 
-        AuthService.setToken('123');
-        AuthService.setProfile({
-            "firstname":"firstname",
-            "lastname":"lastname"
-        });
-        return true;
+        // let formData = new FormData();
+        // formData.append(encodeURIComponent('username'), encodeURIComponent(username));
+        // formData.append(encodeURIComponent('password'), encodeURIComponent(password));
 
-        // Get a token
-        // AuthService.setToken(authData.id_token);
-        // AuthService.setProfile(authData.profile);
-        // return fetch(`public/manifest.json`)
-        //     .then(function(response) {
-        //         return response.json()
-        //     })
-        //     .then(authData=> {
-        //         AuthService.setToken('123');
-        //         AuthService.setProfile({
-        //             "firstname":"firstname",
-        //             "lastname":"lastname"
-        //         });
-        //         return authData;
-        //     });
-        // this.fetch(`${this.domain}/login`, {
-        //     method: 'POST',
-        //     body: JSON.stringify({"username":"John","password":"1234"})
-        // }).then(res => {
-        //     AuthService.setToken(res.id_token);
-        //     return this.fetch(`${this.domain}/user`, {
-        //         method: 'GET'
-        //     })
-        // }).then(res => {
-        //     AuthService.setProfile(res);
-        //     return Promise.resolve(res);
-        // })
+        let formBody = [];
+        formBody.push(encodeURIComponent('username') + "=" + encodeURIComponent(username));
+        formBody.push(encodeURIComponent('password') + "=" + encodeURIComponent(password));
+
+        formBody = formBody.join("&");
+        return fetch(`/login`, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            method: 'POST',
+            body: formBody,
+            credentials: 'same-origin',
+            withCredentials: true,
+        })
+            .then(function(response) {
+                AuthService.setToken('123');
+                return true
+            }).catch(function() {
+
+                console.log("error");
+                return false
+            })
+
     }
 
     loggedIn(){

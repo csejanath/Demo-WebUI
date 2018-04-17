@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "buildserver": "react-scripts build && rm -rf ../Demo-WebService/src/main/webapp/* && mv build/* ../Demo-WebService/src/main/webapp",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
