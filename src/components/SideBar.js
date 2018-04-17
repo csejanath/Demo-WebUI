@@ -74,9 +74,7 @@ class SideBar extends Component {
     registryFile() {
         fetch(`/registry/${sha256(this.state.fileName)}`, {
             headers: new Headers({
-                'Accept': 'application/json, application/xml, text/play, text/html, *.*',
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
             }),
             method: 'POST',
             credentials: 'same-origin',
