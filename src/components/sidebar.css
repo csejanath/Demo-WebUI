@@ -1,6 +1,7 @@
 .side-bar {
     display: block;
     overflow: auto;
+    overflow-x: hidden;
     width: 300px;
 }
 

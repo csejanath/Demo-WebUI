@@ -29,6 +29,7 @@ class SideBar extends Component {
         };
 
         this.toggleRegistrationModal = this.toggleRegistrationModal.bind(this);
+        this.selectFile = this.selectFile.bind(this);
     }
 
     // logout
@@ -68,9 +69,31 @@ class SideBar extends Component {
 
     // component Did Mount
     componentDidMount() {
-
+        fetch(`/registry/list`, {
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            method: 'GET',
+            credentials: 'same-origin',
+            withCredentials: true
+        })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        fileList: result
+                    });
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    console.log(error)
+                }
+            )
     }
 
+    //register file
     registryFile() {
         fetch(`/registry/${sha256(this.state.fileName)}`, {
             headers: new Headers({
@@ -117,14 +140,19 @@ class SideBar extends Component {
             )
     }
 
+    //file select for info
+    selectFile(file){
+        this.props.setsSelectedFile(file);
+    }
+
 
     render() {
         return (
             <aside className="side-bar border-right">
                 <ListGroup className="border-0">
                     {
-                        this.state.fileList.map(f => <ListGroupItem key={f.id} className="border-bottom" tag="a"
-                                                                    href="#">{f.name}</ListGroupItem>)
+                        this.state.fileList.map((f, i) => <ListGroupItem key={i} onClick={() => this.selectFile(f)} className="border-bottom" tag="a"
+                                                                    href="#">{f.fileName}</ListGroupItem>)
                     }
                 </ListGroup>
                 <div className="d-flex flex-column align-items-stretch p-3">

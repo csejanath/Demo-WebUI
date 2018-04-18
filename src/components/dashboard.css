@@ -12,3 +12,8 @@
     flex-direction: row;
     align-items: stretch;
 }
+
+.file-details {
+    display: block;
+    width: calc(100% - 300px);
+}

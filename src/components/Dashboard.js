@@ -12,12 +12,19 @@ class Dashboard extends Component {
         this.state = {};
     }
 
+    setsSelectedFile(file) {
+        this.setState({
+            selectedFile: file
+        })
+    }
+
     render() {
         return (
             <div className="wrapper">
                 <Header/>
                 <div className="main-content">
-                    <SideBar></SideBar>
+                    <SideBar setsSelectedFile={this.setsSelectedFile.bind(this)}></SideBar>
+                    <div className="file-details">{this.state.selectedFile && <div className="p-3">{this.state.selectedFile.fileName}</div>}</div>
                 </div>
             </div>
         )
