@@ -118,7 +118,7 @@ class SideBar extends Component {
                     console.log(result);
 
                     let files = this.state.fileList.slice();
-                    files.push({name: this.state.fileName, id: result.id});
+                    files.push({fileName: this.state.fileName, id: result.id});
                     this.setState({
                         fileList: files,
                         fileName: "",
