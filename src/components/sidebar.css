@@ -11,6 +11,13 @@
     margin: 0;
 }
 
+.list-group-item-etr {
+    border: none;
+    border-radius: 0 !important;
+    margin: 0;
+    color: crimson;
+}
+
 .dropzone {
     display: flex;
     align-items: center;

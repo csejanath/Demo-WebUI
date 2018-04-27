@@ -151,8 +151,8 @@ class SideBar extends Component {
             <aside className="side-bar border-right">
                 <ListGroup className="border-0">
                     {
-                        this.state.fileList.map((f, i) => <ListGroupItem key={i} onClick={() => this.selectFile(f)} className="border-bottom" tag="a"
-                                                                    href="#">{f.fileName}</ListGroupItem>)
+                        this.state.fileList.map((f, i) => <ListGroupItem key={i} onClick={() => this.selectFile(f)} className={f.quantity>0 ? 'list-group-item-etr' : 'list-group-item'} tag="a"
+                                                                    href="#">{f.quantity>0 ? (f.fileName + ' (' + f.quantity + '/' + f.quantity + ')') : f.fileName}</ListGroupItem>)
                     }
                 </ListGroup>
                 <div className="d-flex flex-column align-items-stretch p-3">

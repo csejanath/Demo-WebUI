@@ -1,6 +1,6 @@
 export default class AuthService {
     constructor(domain) {
-        // this.domain = domain || 'http://13.229.127.31:8080/demo-0.0.1-SNAPSHOT';
+        //this.domain = domain || 'http://localhost:8090';
         this.domain = domain || '';
         this.fetch = this.fetch.bind(this);
         this.login = this.login.bind(this);

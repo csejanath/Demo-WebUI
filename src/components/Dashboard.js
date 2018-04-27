@@ -24,7 +24,19 @@ class Dashboard extends Component {
                 <Header/>
                 <div className="main-content">
                     <SideBar setsSelectedFile={this.setsSelectedFile.bind(this)}></SideBar>
-                    <div className="file-details">{this.state.selectedFile && <div className="p-3">{this.state.selectedFile.fileName}</div>}</div>
+                    <div className="file-details">{this.state.selectedFile && 
+                        <div className="p-3">{
+                        <ul>
+                            <li>File Name       : {this.state.selectedFile.fileName}</li>
+                            <li>file Size       : {this.state.selectedFile.fileSize}</li>
+                            <li>Nickname        : {this.state.selectedFile.nickname}</li>
+                            <li>Remarks         : {this.state.selectedFile.remarks}</li>
+                            <li>Document Type   : {this.state.selectedFile.doc_type}</li>
+                            <li>Original / TC   : {this.state.selectedFile.type}</li>
+                            <li>Quantity        : {this.state.selectedFile.quantity}</li>
+                        </ul>
+                        }</div>}
+                    </div>
                 </div>
             </div>
         )
