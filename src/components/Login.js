@@ -37,7 +37,8 @@ class Login extends Component {
                  // location.reload();
              },500)
         }else  {
-            alert('login failed');
+            console.log("Got 401");
+            // alert('login failed');
         }
     }
 

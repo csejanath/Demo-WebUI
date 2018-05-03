@@ -8,6 +8,8 @@ import {
 } from 'reactstrap';
 import Dropzone from "react-dropzone";
 import {sha256} from 'js-sha256';
+var crypto = require('crypto');
+var fs = require('fs');
 // import axios from 'axios';
 
 class SideBar extends Component {
@@ -25,7 +27,8 @@ class SideBar extends Component {
             remarks: "",
             doc_type: "Bill of Landing",
             type: "",
-            quantity: ""
+            quantity: "",
+            hash: ""
         };
 
         this.toggleRegistrationModal = this.toggleRegistrationModal.bind(this);
@@ -49,11 +52,44 @@ class SideBar extends Component {
 
     //drop files
     onDrop(files) {
+
+        var reader = new FileReader();
+
+        const scope = this
+        reader.onload = function(e) {
+            // alert(sha256(reader.result));
+            // hash = reader.result;
+            scope.setState({
+                hash: sha256(reader.result)
+            });
+      
+        }
+
+        // reader.onload = () => this.setState({ hash: sha256(reader.result) })
+
+        reader.readAsBinaryString(files[0]);
+
         this.setState({
             files: files,
             fileName: files[0].name,
-            fileSize: files[0].size,
+            fileSize: files[0].size
         });
+        
+// // the file you want to get the hash    
+// var fd = fs.createReadStream(files[0].name);
+// var hash = crypto.createHash('sha256');
+// hash.setEncoding('hex');
+
+// fd.on('end', function() {
+//     hash.end();
+//     console.log(hash.read()); // the desired sha1sum
+// });
+
+// // read all file and pipe it (write it) to the hash object
+// fd.pipe(hash);
+
+// alert(sha256(files[0].name));
+
     }
 
     // handle input change
@@ -95,7 +131,7 @@ class SideBar extends Component {
 
     //register file
     registryFile() {
-        fetch(`/registry/${sha256(this.state.fileName)}`, {
+        fetch(`/registry/${this.state.hash}`, {
             headers: new Headers({
                 'Content-Type': 'application/json'
             }),
@@ -118,7 +154,7 @@ class SideBar extends Component {
                     console.log(result);
 
                     let files = this.state.fileList.slice();
-                    files.push({fileName: this.state.fileName, id: result.id});
+                    files.push({fileName: this.state.fileName, fileSize: this.state.fileSize, nickname: this.state.nickname, remarks: this.state.remarks, doc_type: this.state.doc_type, quantity: this.state.quantity, myqty: this.state.quantity, totalqty: this.state.quantity, id: result.id});
                     this.setState({
                         fileList: files,
                         fileName: "",
@@ -152,7 +188,7 @@ class SideBar extends Component {
                 <ListGroup className="border-0">
                     {
                         this.state.fileList.map((f, i) => <ListGroupItem key={i} onClick={() => this.selectFile(f)} className={f.quantity>0 ? 'list-group-item-etr' : 'list-group-item'} tag="a"
-                                                                    href="#">{f.quantity>0 ? (f.fileName + ' (' + f.quantity + '/' + f.quantity + ')') : f.fileName}</ListGroupItem>)
+                                                                    href="#">{f.quantity>0 ? (f.fileName + ' (' + f.myqty + '/' + f.totalqty + ')') : f.fileName}</ListGroupItem>)
                     }
                 </ListGroup>
                 <div className="d-flex flex-column align-items-stretch p-3">

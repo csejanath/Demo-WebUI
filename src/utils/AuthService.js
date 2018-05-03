@@ -27,14 +27,21 @@ export default class AuthService {
             credentials: 'same-origin',
             withCredentials: true,
         })
-            .then(function(response) {
+        .then(response => {
+            if (response.status != 401) {
+              response.json().then(json => {
+                // console.log(json);
+                // console.log(json.username);
+                // window.location = "/dashboard";
+                localStorage.setItem('username', json.username);
                 AuthService.setToken('123');
-                return true
-            }).catch(function() {
+              });
 
-                console.log("error");
-                return false
-            })
+            } else {
+                console.log("Got 401");
+                alert("Login failed");
+            }
+        });
 
     }
 

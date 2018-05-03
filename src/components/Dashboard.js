@@ -32,7 +32,6 @@ class Dashboard extends Component {
                             <li>Nickname        : {this.state.selectedFile.nickname}</li>
                             <li>Remarks         : {this.state.selectedFile.remarks}</li>
                             <li>Document Type   : {this.state.selectedFile.doc_type}</li>
-                            <li>Original / TC   : {this.state.selectedFile.type}</li>
                             <li>Quantity        : {this.state.selectedFile.quantity}</li>
                         </ul>
                         }</div>}

@@ -20,7 +20,7 @@ class Header extends Component {
     render() {
         return (
             <nav className="header border-bottom">
-                <h6 className="m-0 mr-3">Hello Bob</h6> <a className="text-dark" href="#0" onClick={()=>{this.logout()}}>logout</a>
+                <h6 className="m-0 mr-3">{localStorage.getItem("username")}</h6> <a className="text-dark" href="#0" onClick={()=>{this.logout()}}>logout</a>
             </nav>
         )
     }
