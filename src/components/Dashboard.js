@@ -3,6 +3,9 @@ import AuthService from "../utils/AuthService";
 import './dashboard.css';
 import Header from "./Header";
 import SideBar from "./SideBar";
+import {ToastContainer, Flip} from "react-toastify";
+
+import 'react-toastify/dist/ReactToastify.css';
 
 class Dashboard extends Component {
     Auth = new AuthService();
@@ -21,6 +24,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="wrapper">
+                <ToastContainer transition={Flip} closeButton={false} hideProgressBar={true}/>
                 <Header/>
                 <div className="main-content">
                     <SideBar setsSelectedFile={this.setsSelectedFile.bind(this)}></SideBar>

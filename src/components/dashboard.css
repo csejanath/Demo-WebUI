@@ -17,3 +17,15 @@
     display: block;
     width: calc(100% - 300px);
 }
+
+.Toastify__toast--default.error{
+    text-align: center;
+    background: #fff6f9;
+    color: #913a3a;
+}
+
+.Toastify__toast--default.success{
+    text-align: center;
+    background: #f6fdff;
+    color: #1e2391;
+}

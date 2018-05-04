@@ -8,6 +8,7 @@ import {
 } from 'reactstrap';
 import Dropzone from "react-dropzone";
 import {sha256} from 'js-sha256';
+import {toast} from "react-toastify";
 // import SnackBar from "react-material-snackbar/src/index";
 
 // let crypto = require('crypto');
@@ -165,7 +166,14 @@ class SideBar extends Component {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
+
+                    if(result.error) {
+                        toast(`${result.error}`, {
+                            position: toast.POSITION.TOP_CENTER,
+                            className: 'error',
+                        });
+                        return false
+                    }
 
                     let files = this.state.fileList.slice();
                     files.push({fileName: this.state.fileName, fileSize: this.state.fileSize, nickname: this.state.nickname, remarks: this.state.remarks, doc_type: this.state.doc_type, quantity: this.state.quantity, myqty: this.state.quantity, totalqty: this.state.quantity, id: result.id});
@@ -180,12 +188,20 @@ class SideBar extends Component {
                         quantity: ""
                     });
                     this.toggleRegistrationModal();
+
+                    toast(`${this.state.fileName} registry successful !`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'success',
+                    });
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
                 (error) => {
-                    console.log(error)
+                    toast("Error message !", {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'error',
+                    });
                 }
             )
     }
@@ -252,19 +268,32 @@ class SideBar extends Component {
             .then(res => res.json())
             .then(
                 (result) => {
-                    // this.setState({
-                    //     fileList: result
-                    // });
+                    if(result.error) {
+                        toast(`${result.error}`, {
+                            position: toast.POSITION.TOP_CENTER,
+                            className: 'error',
+                        });
+                        return false
+                    }
+
                     this.updateFileList();
                     this.setState({
                         selectedFile: null,
                     })
+
+                    toast(`${this.state.fileName} transfer successful !`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'success',
+                    });
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
                 (error) => {
-                    console.log(error)
+                    toast('Error', {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'error',
+                    });
                 }
             )
     }
@@ -305,19 +334,30 @@ class SideBar extends Component {
             .then(res => res.json())
             .then(
                 (result) => {
-                    // this.setState({
-                    //     fileList: result
-                    // });
+                    if(result.error) {
+                        toast(`${result.error}`, {
+                            position: toast.POSITION.TOP_CENTER,
+                            className: 'error',
+                        });
+                        return false
+                    }
                     this.updateFileList();
                     this.setState({
                         selectedFile: null,
                     })
+                    toast(`${this.state.selectedFile.fileName} cancel successful !`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'success',
+                    });
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
                 (error) => {
-                    console.log(error)
+                    toast(`Error`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'success',
+                    });
                 }
             )
     }
@@ -336,17 +376,34 @@ class SideBar extends Component {
             .then(res => res.json())
             .then(
                 (result) => {
-                    // this.setState({
-                    //     fileList: result
-                    // });
+
+                    if(result.error) {
+                        toast(`${result.error}`, {
+                            position: toast.POSITION.TOP_CENTER,
+                            className: 'error',
+                        });
+                        return false
+                    }
+
                     this.updateFileList();
                     this.toggleVerifyModal();
+                    toast("Wow so easy !", {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'black-background',
+                    });
+                    toast(`${this.state.fileName} verify successful !`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'success',
+                    });
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
                 (error) => {
-                    console.log(error)
+                    toast(`Error`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        className: 'error',
+                    });
                 }
             )
     }
@@ -531,7 +588,7 @@ class SideBar extends Component {
                         </Row>
                     </ModalBody>
                     <ModalFooter className="justify-content-center">
-                        <Button color="primary" onClick={this.fileTransferConfirm.bind(this)}>Confirm</Button>
+                        <Button color="primary" onClick={this.fileTransferConfirm.bind(this)}>Transfer</Button>
                         <Button color="secondary" onClick={this.toggleFileTransferModal.bind(this)}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
