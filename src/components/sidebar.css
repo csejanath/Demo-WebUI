@@ -17,6 +17,16 @@
     margin: 0;
     color: crimson;
 }
+.list-group-item-etr:hover {
+    color: #a1152a;
+}
+
+.item-select {
+    background: #ecf4ff;
+}
+.list-group-item-etr.item-select {
+    background: #fff1fa;
+}
 
 .dropzone {
     display: flex;

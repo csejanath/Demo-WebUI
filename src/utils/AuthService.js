@@ -28,7 +28,7 @@ export default class AuthService {
             withCredentials: true,
         })
         .then(response => {
-            if (response.status != 401) {
+            if (response.status === 200) {
               response.json().then(json => {
                 // console.log(json);
                 // console.log(json.username);
@@ -37,9 +37,12 @@ export default class AuthService {
                 AuthService.setToken('123');
               });
 
+              return true;
+
             } else {
                 console.log("Got 401");
                 alert("Login failed");
+                return false;
             }
         });
 

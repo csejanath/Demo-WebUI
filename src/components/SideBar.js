@@ -8,8 +8,10 @@ import {
 } from 'reactstrap';
 import Dropzone from "react-dropzone";
 import {sha256} from 'js-sha256';
-var crypto = require('crypto');
-var fs = require('fs');
+// import SnackBar from "react-material-snackbar/src/index";
+
+// let crypto = require('crypto');
+// let fs = require('fs');
 // import axios from 'axios';
 
 class SideBar extends Component {
@@ -18,17 +20,23 @@ class SideBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modal: false,
+            registryModal: false,
+            confirmModal: false,
+            confirmMsg: '',
+            fileTransferModal: false,
+            confirmType: '',
             fileList: [],
             files: [],
             fileName: "",
             fileSize: "",
             nickname: "",
             remarks: "",
+            otherUsername: "",
             doc_type: "Bill of Landing",
             type: "",
             quantity: "",
-            hash: ""
+            hash: "",
+            selectedFile: null,
         };
 
         this.toggleRegistrationModal = this.toggleRegistrationModal.bind(this);
@@ -45,7 +53,7 @@ class SideBar extends Component {
     //toggle file registration modal
     toggleRegistrationModal() {
         this.setState({
-            modal: !this.state.modal,
+            registryModal: !this.state.registryModal,
             files: []
         });
     }
@@ -53,9 +61,9 @@ class SideBar extends Component {
     //drop files
     onDrop(files) {
 
-        var reader = new FileReader();
+        let reader = new FileReader();
 
-        const scope = this
+        const scope = this;
         reader.onload = function(e) {
             // alert(sha256(reader.result));
             // hash = reader.result;
@@ -63,7 +71,7 @@ class SideBar extends Component {
                 hash: sha256(reader.result)
             });
       
-        }
+        };
 
         // reader.onload = () => this.setState({ hash: sha256(reader.result) })
 
@@ -179,15 +187,90 @@ class SideBar extends Component {
     //file select for info
     selectFile(file){
         this.props.setsSelectedFile(file);
+        this.setState({
+            selectedFile: file
+        })
+    }
+
+
+    //toggle confirm modal
+    toggleConfirmModal() {
+        this.setState({
+            confirmModal: !this.state.confirmModal,
+            confirmMsg: `Are you sure, you want transfer ${this.state.selectedFile.fileName}`,
+        })
+    }
+
+    //toggle confirm modal
+    confirmCallback() {
+        this.toggleConfirmModal();
+        if( this.state.confirmType === 'transfer') {
+            this.toggleFileTransferModal();
+        }
+    }
+
+    //tranfer file
+    toggleFileTransferModal(){
+        this.setState({
+            fileTransferModal: !this.state.fileTransferModal,
+        })
+    }
+
+    //tranfer file confirm
+    fileTransferConfirm(){
+        this.toggleConfirmModal();
+        this.setState({
+            confirmType: 'transfer',
+        })
+    }
+
+    //tranfer file
+    transferFile(){
+
+        fetch(`/registry/transfer/${this.state.selectedFile.hash}`, {
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            method: 'POST',
+            credentials: 'same-origin',
+            withCredentials: true,
+            body: JSON.stringify({
+                otherUsername: this.state.otherUsername,
+                type: 'ETR',
+                quantity: this.state.selectedFile.quantity
+            })
+        })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        fileList: result
+                    });
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    console.log(error)
+                }
+            )
     }
 
 
     render() {
         return (
             <aside className="side-bar border-right">
+                {/*<SnackBar*/}
+                    {/*show={true}                            //Boolean  - Required and Default - `false`*/}
+                    {/*timer={6000}                           //Number   - Optional and Default - `4000` (4 secs)*/}
+                {/*>*/}
+                    {/*// Pass any HTML element to render*/}
+                    {/*<p>Loading...</p>*/}
+                {/*</SnackBar>*/}
                 <ListGroup className="border-0">
                     {
-                        this.state.fileList.map((f, i) => <ListGroupItem key={i} onClick={() => this.selectFile(f)} className={f.quantity>0 ? 'list-group-item-etr' : 'list-group-item'} tag="a"
+                        this.state.fileList.map((f, i) =>
+                            <ListGroupItem key={i} onClick={() => this.selectFile(f)} className={(f.quantity>0 ? 'list-group-item-etr' : 'list-group-item') +' '+ (f === this.state.selectedFile ? 'item-select' : '')} tag="a"
                                                                     href="#">{f.quantity>0 ? (f.fileName + ' (' + f.myqty + '/' + f.totalqty + ')') : f.fileName}</ListGroupItem>)
                     }
                 </ListGroup>
@@ -195,8 +278,17 @@ class SideBar extends Component {
                     <Button color="primary mb-2" onClick={this.toggleRegistrationModal}>Register File</Button>
                     <Button color="primary mb-2">Register with Link</Button>
                     <Button color="primary mb-2">Verify File</Button>
+                    { (this.state.selectedFile && this.state.selectedFile.quantity > 0) &&
+
+                        <div className="d-flex flex-column align-items-stretch">
+                            <Button color="primary mb-2" onClick={this.fileTransferConfirm.bind(this)}>Transfer</Button>
+                            <Button color="primary mb-2">Cancel</Button>
+                        </div>
+                    }
                 </div>
-                <Modal isOpen={this.state.modal} toggle={this.toggleRegistrationModal} className={this.props.className}>
+
+                {/*register file modal*/}
+                <Modal isOpen={this.state.registryModal} toggle={this.toggleRegistrationModal} className={this.props.className}>
                     <ModalHeader>Registration</ModalHeader>
                     <ModalBody className="pl-4 pr-4">
                         <Dropzone onDrop={this.onDrop.bind(this)} multiple={false} className="dropzone" style={{
@@ -265,6 +357,41 @@ class SideBar extends Component {
                     </ModalBody>
                     <ModalFooter className="justify-content-center">
                         <Button color="primary" onClick={this.registryFile.bind(this)}>Register</Button>
+                    </ModalFooter>
+                </Modal>
+
+                {/* confirm modal */}
+                <Modal isOpen={this.state.confirmModal} toggle={this.toggleConfirmModal} className={this.props.className}>
+                    <ModalHeader>Confirm</ModalHeader>
+                    <ModalBody className="pl-4 pr-4">
+                        <p>{this.state.confirmMsg}</p>
+                    </ModalBody>
+                    <ModalFooter className="justify-content-center">
+                        <Button color="primary" onClick={this.confirmCallback.bind(this)}>Confirm</Button>
+                        <Button color="secondary" onClick={this.toggleConfirmModal.bind(this)}>Cancel</Button>
+                    </ModalFooter>
+                </Modal>
+
+                {/* confirm modal */}
+                <Modal isOpen={this.state.fileTransferModal} toggle={this.toggleFileTransferModal} className={this.props.className}>
+                    <ModalHeader>File Transfer</ModalHeader>
+                    <ModalBody className="pl-4 pr-4">
+                        <Row>
+                            <FormGroup row className="pt-3 pb-3 m-0 mt-2 w-100">
+                                <Label for="doc_type" sm={4}>Select user:</Label>
+                                <Col sm={8}>
+                                    <Input className="border modal-input" type="select" name="otherUsername" id="otherUsername"
+                                           onChange={this.handleInputChange.bind(this)}>
+                                        <option value="user">User</option>
+                                        <option value="admin">Admin</option>
+                                    </Input>
+                                </Col>
+                            </FormGroup>
+                        </Row>
+                    </ModalBody>
+                    <ModalFooter className="justify-content-center">
+                        <Button color="primary" onClick={this.transferFile.bind(this)}>Confirm</Button>
+                        <Button color="secondary" onClick={this.toggleFileTransferModal.bind(this)}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </aside>
