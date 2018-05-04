@@ -30,16 +30,17 @@ class Login extends Component {
 
 
     login() {
-         if(this.Auth.login(this.state.userName, this.state.password)) {
-             let _this = this;
-             setTimeout(function () {
-                 _this.props.history.push("/dashboard");
-                 // location.reload();
-             },500)
-        }else  {
-            console.log("Got 401");
-            // alert('login failed');
-        }
+        this.Auth.login(this.state.userName, this.state.password).then(response => {
+            if (response) {
+                let _this = this;
+                setTimeout(function () {
+                    _this.props.history.push("/dashboard");
+                }, 500)
+            } else {
+                console.log("Got 401");
+                alert("Login failed");
+            }
+        })
     }
 
     render() {

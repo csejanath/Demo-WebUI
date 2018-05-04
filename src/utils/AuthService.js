@@ -4,7 +4,7 @@ export default class AuthService {
         this.domain = domain || '';
         this.fetch = this.fetch.bind(this);
         this.login = this.login.bind(this);
-        AuthService.getProfile = AuthService.getProfile.bind(this);
+        // AuthService.getProfile = AuthService.getProfile.bind(this);
     }
 
     login(username, password) {
@@ -30,18 +30,14 @@ export default class AuthService {
         .then(response => {
             if (response.status === 200) {
               response.json().then(json => {
-                // console.log(json);
-                // console.log(json.username);
-                // window.location = "/dashboard";
-                localStorage.setItem('username', json.username);
+
+                AuthService.setProfile(json);
                 AuthService.setToken('123');
               });
 
               return true;
 
             } else {
-                console.log("Got 401");
-                alert("Login failed");
                 return false;
             }
         });
@@ -59,7 +55,7 @@ export default class AuthService {
         localStorage.setItem('profile', JSON.stringify(profile));
     }
 
-    static getProfile(){
+    getProfile(){
         // Retrieves the profile data from localStorage
         const profile = localStorage.getItem('profile');
         return profile ? JSON.parse(localStorage.profile) : {}

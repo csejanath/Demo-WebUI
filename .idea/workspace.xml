@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4992bb2b-f79a-43d9-8641-c59a8b4c3fc2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/alertService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Login.js" afterPath="$PROJECT_DIR$/src/components/Login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/SideBar.js" afterPath="$PROJECT_DIR$/src/components/SideBar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/sidebar.css" afterPath="$PROJECT_DIR$/src/components/sidebar.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/AuthService.js" afterPath="$PROJECT_DIR$/src/utils/AuthService.js" />
@@ -26,17 +25,27 @@
       <file leaf-file-name="SideBar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SideBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="314">
+              <caret line="383" column="22" lean-forward="false" selection-start-line="383" selection-start-column="22" selection-end-line="383" selection-end-column="22" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="n#!!block;n#constructor#0;n#SideBar#0" expanded="false" />
-                <element signature="n#!!block;n#logout#0;n#SideBar#0" expanded="false" />
-                <element signature="n#!!block;n#toggleRegistrationModal#0;n#SideBar#0" expanded="false" />
-                <element signature="e#2045#2155#0" expanded="false" />
+                <element signature="n#!!block;n#handleInputChange#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#updateFileList#0;n#SideBar#0" expanded="false" />
                 <element signature="n#!!block;n#registryFile#0;n#SideBar#0" expanded="false" />
                 <element signature="n#!!block;n#selectFile#0;n#SideBar#0" expanded="false" />
-                <element signature="e#9446#13965#0" expanded="false" />
+                <element signature="n#!!block;n#toggleConfirmModal#0;n#SideBar#0" expanded="false" />
+                <element signature="e#5922#5985#0" expanded="false" />
+                <element signature="n#!!block;n#confirmCallback#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#toggleFileTransferModal#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#fileTransferConfirm#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#transferFile#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#toggleCancelConfirmModal#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#cancelFile#0;n#SideBar#0" expanded="false" />
+                <element signature="e#8421#8892#0" expanded="false" />
+                <element signature="n#!!block;n#setSelectQuantity#0;n#SideBar#0" expanded="false" />
+                <element signature="e#12883#17402#0" expanded="false" />
+                <element signature="e#18632#19282#0" expanded="false" />
+                <element signature="e#19338#21548#0" expanded="false" />
+                <marker date="1525439860452" expanded="true" signature="10870:11001" ph="..." />
               </folding>
             </state>
           </provider>
@@ -46,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/utils/alertService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -55,8 +64,8 @@
       <file leaf-file-name="sidebar.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/sidebar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            <state relative-caret-position="165">
+              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -65,18 +74,37 @@
       <file leaf-file-name="AuthService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/AuthService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="231">
+              <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
               <folding>
-                <element signature="n#!!block;n#login#0;n#AuthService#0;n#!!top" expanded="false" />
                 <element signature="n#!!block;n#loggedIn#0;n#AuthService#0;n#!!top" expanded="false" />
                 <element signature="n#!!block;n#setProfile#0;n#AuthService#0;n#!!top" expanded="false" />
                 <element signature="n#!!block;n#getProfile#0;n#AuthService#0;n#!!top" expanded="false" />
                 <element signature="n#!!block;n#setToken#0;n#AuthService#0;n#!!top" expanded="false" />
                 <element signature="n#!!block;n#getToken#0;n#AuthService#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#logout#0;n#AuthService#0;n#!!top" expanded="false" />
                 <element signature="n#!!block;n#_checkStatus#0;n#AuthService#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#fetch#0;n#AuthService#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,14 +135,20 @@
       <find>host</find>
       <find>modal</find>
       <find>confirmModal</find>
-      <find>transferFile</find>
       <find>hash</find>
+      <find>transferFile</find>
+      <find>toggleConfirmModal</find>
+      <find>confirmType</find>
+      <find>quantity</find>
+      <find>pt-3 pb-3</find>
     </findStrings>
     <replaceStrings>
       <replace>toggleRegistrationModal</replace>
       <replace>doc_type</replace>
       <replace>registryModal</replace>
       <replace>fileTransferConfirm</replace>
+      <replace>cancel</replace>
+      <replace>pt-2 pb-2</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -136,15 +170,15 @@
         <option value="/Applications/MAMP/htdocs/janath/static/js/main.4a29d220.js" />
         <option value="/Applications/MAMP/htdocs/janath/index.html" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
-        <option value="$PROJECT_DIR$/src/components/Login.js" />
         <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/src/components/dashboard.css" />
         <option value="$PROJECT_DIR$/src/components/Dashboard.js" />
-        <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/utils/alertService.js" />
+        <option value="$PROJECT_DIR$/src/components/Login.js" />
+        <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/src/utils/AuthService.js" />
         <option value="$PROJECT_DIR$/src/components/sidebar.css" />
-        <option value="$PROJECT_DIR$/src/utils/alertService.js" />
         <option value="$PROJECT_DIR$/src/components/SideBar.js" />
       </list>
     </option>
@@ -178,7 +212,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,7 +277,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,124 +295,6 @@
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/package-lock.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/components/Dashboard.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/components/Header.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/components/Login.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/components/SideBar.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/components/sidebar.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/utils/AuthService.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.vscode/launch.json</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -487,7 +403,8 @@
       <workItem from="1524069898048" duration="3494000" />
       <workItem from="1524231364984" duration="676000" />
       <workItem from="1524416605310" duration="1064000" />
-      <workItem from="1525328598323" duration="7504000" />
+      <workItem from="1525328598323" duration="7737000" />
+      <workItem from="1525408652936" duration="5777000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1523531256689</created>
@@ -524,11 +441,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524231846606</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Transfer file and login fail function">
+      <created>1525407148352</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1525407148352</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48201000" />
+    <option name="totallyTimeSpent" value="54211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -538,15 +462,15 @@
       <window_info id="ReactNative" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16877638" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -595,14 +519,15 @@
     <MESSAGE value="Content type changes" />
     <MESSAGE value="get File list and show file details in right pane" />
     <MESSAGE value="register file name not show fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="register file name not show fixes" />
+    <MESSAGE value="Transfer file and login fail function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Transfer file and login fail function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/SideBar.js</url>
-          <line>169</line>
+          <line>175</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="2" />
@@ -631,14 +556,13 @@
         <state relative-caret-position="525">
           <caret line="35" column="28" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
           <folding>
-            <element signature="n#!!block;n#login#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#loggedIn#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#setProfile#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getProfile#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#setToken#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getToken#0;n#AuthService#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#logout#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#_checkStatus#0;n#AuthService#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#fetch#0;n#AuthService#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -648,14 +572,24 @@
         <state relative-caret-position="1080">
           <caret line="84" column="23" lean-forward="false" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#SideBar#0" expanded="false" />
-            <element signature="n#!!block;n#logout#0;n#SideBar#0" expanded="false" />
-            <element signature="n#!!block;n#toggleRegistrationModal#0;n#SideBar#0" expanded="false" />
-            <element signature="e#2045#2155#0" expanded="false" />
+            <element signature="n#!!block;n#handleInputChange#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#updateFileList#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#registryFile#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#selectFile#0;n#SideBar#0" expanded="false" />
-            <element signature="e#9446#13965#0" expanded="false" />
+            <element signature="n#!!block;n#toggleConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="e#5922#5985#0" expanded="false" />
+            <element signature="n#!!block;n#confirmCallback#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleFileTransferModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#fileTransferConfirm#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#transferFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleCancelConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#cancelFile#0;n#SideBar#0" expanded="false" />
+            <element signature="e#8421#8892#0" expanded="false" />
+            <element signature="n#!!block;n#setSelectQuantity#0;n#SideBar#0" expanded="false" />
+            <element signature="e#12883#17402#0" expanded="false" />
+            <element signature="e#18632#19282#0" expanded="false" />
+            <element signature="e#19338#21548#0" expanded="false" />
+            <marker date="1525439860452" expanded="true" signature="10870:11001" ph="..." />
           </folding>
         </state>
       </provider>
@@ -682,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,14 +656,13 @@
         <state relative-caret-position="525">
           <caret line="35" column="28" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
           <folding>
-            <element signature="n#!!block;n#login#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#loggedIn#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#setProfile#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getProfile#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#setToken#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getToken#0;n#AuthService#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#logout#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#_checkStatus#0;n#AuthService#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#fetch#0;n#AuthService#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -790,14 +722,24 @@
         <state relative-caret-position="1035">
           <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#SideBar#0" expanded="false" />
-            <element signature="n#!!block;n#logout#0;n#SideBar#0" expanded="false" />
-            <element signature="n#!!block;n#toggleRegistrationModal#0;n#SideBar#0" expanded="false" />
-            <element signature="e#2045#2155#0" expanded="false" />
+            <element signature="n#!!block;n#handleInputChange#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#updateFileList#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#registryFile#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#selectFile#0;n#SideBar#0" expanded="false" />
-            <element signature="e#9446#13965#0" expanded="false" />
+            <element signature="n#!!block;n#toggleConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="e#5922#5985#0" expanded="false" />
+            <element signature="n#!!block;n#confirmCallback#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleFileTransferModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#fileTransferConfirm#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#transferFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleCancelConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#cancelFile#0;n#SideBar#0" expanded="false" />
+            <element signature="e#8421#8892#0" expanded="false" />
+            <element signature="n#!!block;n#setSelectQuantity#0;n#SideBar#0" expanded="false" />
+            <element signature="e#12883#17402#0" expanded="false" />
+            <element signature="e#18632#19282#0" expanded="false" />
+            <element signature="e#19338#21548#0" expanded="false" />
+            <marker date="1525439860452" expanded="true" signature="10870:11001" ph="..." />
           </folding>
         </state>
       </provider>
@@ -807,14 +749,13 @@
         <state relative-caret-position="1140">
           <caret line="76" column="43" lean-forward="false" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
           <folding>
-            <element signature="n#!!block;n#login#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#loggedIn#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#setProfile#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getProfile#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#setToken#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getToken#0;n#AuthService#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#logout#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#_checkStatus#0;n#AuthService#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#fetch#0;n#AuthService#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -919,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -927,15 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="37" column="19" lean-forward="false" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,14 +877,6 @@
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,56 +900,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="2" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/alertService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/AuthService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="231">
+          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding>
-            <element signature="n#!!block;n#login#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#loggedIn#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#setProfile#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getProfile#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#setToken#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#getToken#0;n#AuthService#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#logout#0;n#AuthService#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#_checkStatus#0;n#AuthService#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#fetch#0;n#AuthService#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SideBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="314">
+          <caret line="383" column="22" lean-forward="false" selection-start-line="383" selection-start-column="22" selection-end-line="383" selection-end-column="22" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#SideBar#0" expanded="false" />
-            <element signature="n#!!block;n#logout#0;n#SideBar#0" expanded="false" />
-            <element signature="n#!!block;n#toggleRegistrationModal#0;n#SideBar#0" expanded="false" />
-            <element signature="e#2045#2155#0" expanded="false" />
+            <element signature="n#!!block;n#handleInputChange#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#updateFileList#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#registryFile#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#selectFile#0;n#SideBar#0" expanded="false" />
-            <element signature="e#9446#13965#0" expanded="false" />
+            <element signature="n#!!block;n#toggleConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="e#5922#5985#0" expanded="false" />
+            <element signature="n#!!block;n#confirmCallback#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleFileTransferModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#fileTransferConfirm#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#transferFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleCancelConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#cancelFile#0;n#SideBar#0" expanded="false" />
+            <element signature="e#8421#8892#0" expanded="false" />
+            <element signature="n#!!block;n#setSelectQuantity#0;n#SideBar#0" expanded="false" />
+            <element signature="e#12883#17402#0" expanded="false" />
+            <element signature="e#18632#19282#0" expanded="false" />
+            <element signature="e#19338#21548#0" expanded="false" />
+            <marker date="1525439860452" expanded="true" signature="10870:11001" ph="..." />
           </folding>
         </state>
       </provider>

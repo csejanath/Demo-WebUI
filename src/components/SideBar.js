@@ -22,6 +22,7 @@ class SideBar extends Component {
         this.state = {
             registryModal: false,
             confirmModal: false,
+            verifyModal: false,
             confirmMsg: '',
             fileTransferModal: false,
             confirmType: '',
@@ -32,6 +33,7 @@ class SideBar extends Component {
             nickname: "",
             remarks: "",
             otherUsername: "",
+            sendQuantity: 0,
             doc_type: "Bill of Landing",
             type: "",
             quantity: "",
@@ -113,6 +115,10 @@ class SideBar extends Component {
 
     // component Did Mount
     componentDidMount() {
+        this.updateFileList();
+    }
+
+    updateFileList() {
         fetch(`/registry/list`, {
             headers: new Headers({
                 'Content-Type': 'application/json'
@@ -197,7 +203,6 @@ class SideBar extends Component {
     toggleConfirmModal() {
         this.setState({
             confirmModal: !this.state.confirmModal,
-            confirmMsg: `Are you sure, you want transfer ${this.state.selectedFile.fileName}`,
         })
     }
 
@@ -205,7 +210,9 @@ class SideBar extends Component {
     confirmCallback() {
         this.toggleConfirmModal();
         if( this.state.confirmType === 'transfer') {
-            this.toggleFileTransferModal();
+            this.transferFile();
+        } else if( this.state.confirmType === 'cancel') {
+            this.cancelFile();
         }
     }
 
@@ -218,9 +225,11 @@ class SideBar extends Component {
 
     //tranfer file confirm
     fileTransferConfirm(){
+        this.toggleFileTransferModal();
         this.toggleConfirmModal();
         this.setState({
             confirmType: 'transfer',
+            confirmMsg: `Are you sure, you want transfer ${this.state.selectedFile.fileName}`,
         })
     }
 
@@ -237,15 +246,19 @@ class SideBar extends Component {
             body: JSON.stringify({
                 otherUsername: this.state.otherUsername,
                 type: 'ETR',
-                quantity: this.state.selectedFile.quantity
+                quantity: this.state.sendQuantity,
             })
         })
             .then(res => res.json())
             .then(
                 (result) => {
+                    // this.setState({
+                    //     fileList: result
+                    // });
+                    this.updateFileList();
                     this.setState({
-                        fileList: result
-                    });
+                        selectedFile: null,
+                    })
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
@@ -256,6 +269,97 @@ class SideBar extends Component {
             )
     }
 
+    // toggleCancelConfirmModal
+    toggleCancelConfirmModal() {
+        this.toggleConfirmModal();
+        this.setState({
+            confirmType: 'cancel',
+            confirmMsg: `Are you sure, you want cancel ${this.state.selectedFile.fileName}`,
+        })
+    }
+
+    // toggleVerfyModal
+    toggleVerifyModal() {
+        this.setState({
+            verifyModal: !this.state.verifyModal,
+        })
+    }
+
+    //tranfer file
+    cancelFile(){
+
+        fetch(`/registry/cancel/${this.state.selectedFile.hash}`, {
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            method: 'POST',
+            credentials: 'same-origin',
+            withCredentials: true,
+            body: JSON.stringify({
+                fileName: this.state.selectedFile.fileName,
+                size: this.state.selectedFile.fileSize,
+                type: 'ETR',
+                quantity: this.state.selectedFile.quantity,
+            })
+        })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    // this.setState({
+                    //     fileList: result
+                    // });
+                    this.updateFileList();
+                    this.setState({
+                        selectedFile: null,
+                    })
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    console.log(error)
+                }
+            )
+    }
+
+    //tranfer file
+    verifyFile(){
+
+        fetch(`/registry/${this.state.hash}/${this.state.fileSize}`, {
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            method: 'GET',
+            credentials: 'same-origin',
+            withCredentials: true,
+        })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    // this.setState({
+                    //     fileList: result
+                    // });
+                    this.updateFileList();
+                    this.toggleVerifyModal();
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    console.log(error)
+                }
+            )
+    }
+
+    setSelectQuantity () {
+        let options = [];
+        if (this.state.selectedFile) {
+            for (let i = 0; i < this.state.selectedFile.quantity; i++) {
+                options.push( <option key={i} value={i + 1}>{i + 1}</option>);
+            }
+        }
+        return options;
+    }
 
     render() {
         return (
@@ -277,12 +381,14 @@ class SideBar extends Component {
                 <div className="d-flex flex-column align-items-stretch p-3">
                     <Button color="primary mb-2" onClick={this.toggleRegistrationModal}>Register File</Button>
                     <Button color="primary mb-2">Register with Link</Button>
-                    <Button color="primary mb-2">Verify File</Button>
+                    { this.state.selectedFile &&
+                    <Button color="primary mb-2" onClick={this.toggleVerifyModal.bind(this)}>Verify File</Button>
+                    }
                     { (this.state.selectedFile && this.state.selectedFile.quantity > 0) &&
 
                         <div className="d-flex flex-column align-items-stretch">
-                            <Button color="primary mb-2" onClick={this.fileTransferConfirm.bind(this)}>Transfer</Button>
-                            <Button color="primary mb-2">Cancel</Button>
+                            <Button color="primary mb-2" onClick={this.toggleFileTransferModal.bind(this)}>Transfer</Button>
+                            <Button color="primary mb-2" onClick={this.toggleCancelConfirmModal.bind(this)}>Cancel</Button>
                         </div>
                     }
                 </div>
@@ -305,21 +411,21 @@ class SideBar extends Component {
 
 
                         <Row>
-                            <FormGroup row className="pt-3 pb-3 m-0 mt-2 w-100">
+                            <FormGroup row className="pt-1 pb-1 m-0 mt-2 w-100">
                                 <Label for="nickname" sm={4}>Nickname:</Label>
                                 <Col sm={8}>
                                     <Input className="border-bottom modal-input" type="text" name="nickname"
                                            id="nickname" onChange={this.handleInputChange.bind(this)}/>
                                 </Col>
                             </FormGroup>
-                            <FormGroup row className="pt-3 pb-3 m-0 mt-2 w-100">
+                            <FormGroup row className="pt-1 pb-1 m-0 mt-2 w-100">
                                 <Label for="remarks" sm={4}>Remarks:</Label>
                                 <Col sm={8}>
                                     <Input className="border-bottom modal-input" type="text" name="remarks" id="remarks"
                                            onChange={this.handleInputChange.bind(this)}/>
                                 </Col>
                             </FormGroup>
-                            <FormGroup row className="pt-3 pb-3 m-0 mt-2 w-100">
+                            <FormGroup row className="pt-1 pb-1 m-0 mt-2 w-100">
                                 <Label for="doc_type" sm={4}>Document Type:</Label>
                                 <Col sm={8}>
                                     <Input className="border modal-input" type="select" name="doc_type" id="doc_type"
@@ -332,7 +438,7 @@ class SideBar extends Component {
                                     </Input>
                                 </Col>
                             </FormGroup>
-                            <FormGroup row className="pt-3 pb-3 m-0 mt-2 w-100">
+                            <FormGroup row className="pt-1 pb-1 m-0 mt-2 w-100">
                                 <Label sm={4} check className="ml-4">
                                     <Input type="radio" value="ETR" name="type" checked={this.state.type === 'ETR'}
                                            onChange={this.handleInputChange.bind(this)}/>
@@ -345,7 +451,7 @@ class SideBar extends Component {
                                 </Label>
                             </FormGroup>
                             {this.state.type === 'ETR' &&
-                            <FormGroup row className="pt-3 pb-3 m-0 mt-2 w-100">
+                            <FormGroup row className="pt-1 pb-1 m-0 mt-2 w-100">
                                 <Label for="quantity" sm={4}>Quantity:</Label>
                                 <Col sm={8}>
                                     <Input className="border-bottom modal-input" type="number" name="quantity"
@@ -357,6 +463,28 @@ class SideBar extends Component {
                     </ModalBody>
                     <ModalFooter className="justify-content-center">
                         <Button color="primary" onClick={this.registryFile.bind(this)}>Register</Button>
+                    </ModalFooter>
+                </Modal>
+
+                {/*verify file modal*/}
+                <Modal isOpen={this.state.verifyModal} toggle={this.toggleVerifyModal} className={this.props.className}>
+                    <ModalHeader>Verify</ModalHeader>
+                    <ModalBody className="pl-4 pr-4">
+                        <Dropzone onDrop={this.onDrop.bind(this)} multiple={false} className="dropzone" style={{
+                            height: '200px',
+                            border: '2px dashed rgb(102, 102, 102)',
+                            borderRadius: '5px',
+                            width: '100%',
+                        }}>
+                            {
+                                this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+                            }
+                            <p>Try dropping some files here, or click to select files</p>
+                        </Dropzone>
+
+                    </ModalBody>
+                    <ModalFooter className="justify-content-center">
+                        <Button color="primary" onClick={this.verifyFile.bind(this)}>Verify</Button>
                     </ModalFooter>
                 </Modal>
 
@@ -377,20 +505,33 @@ class SideBar extends Component {
                     <ModalHeader>File Transfer</ModalHeader>
                     <ModalBody className="pl-4 pr-4">
                         <Row>
-                            <FormGroup row className="pt-3 pb-3 m-0 mt-2 w-100">
+                            <FormGroup row className="pt-1 pb-1 m-0 mt-2 w-100">
                                 <Label for="doc_type" sm={4}>Select user:</Label>
                                 <Col sm={8}>
                                     <Input className="border modal-input" type="select" name="otherUsername" id="otherUsername"
                                            onChange={this.handleInputChange.bind(this)}>
+                                        <option value="">Select</option>
                                         <option value="user">User</option>
                                         <option value="admin">Admin</option>
                                     </Input>
                                 </Col>
                             </FormGroup>
                         </Row>
+                        <Row>
+                            <FormGroup row className="pt-1 pb-1 m-0 mt-2 w-100">
+                                <Label for="doc_type" sm={4}>Select quantity:</Label>
+                                <Col sm={8}>
+                                    <Input className="border modal-input" type="select" name="sendQuantity" id="sendQuantity"
+                                           onChange={this.handleInputChange.bind(this)}>
+                                        <option value="">Select</option>)
+                                        {this.setSelectQuantity()}
+                                    </Input>
+                                </Col>
+                            </FormGroup>
+                        </Row>
                     </ModalBody>
                     <ModalFooter className="justify-content-center">
-                        <Button color="primary" onClick={this.transferFile.bind(this)}>Confirm</Button>
+                        <Button color="primary" onClick={this.fileTransferConfirm.bind(this)}>Confirm</Button>
                         <Button color="secondary" onClick={this.toggleFileTransferModal.bind(this)}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
