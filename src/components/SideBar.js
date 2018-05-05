@@ -43,6 +43,7 @@ class SideBar extends Component {
         };
 
         this.toggleRegistrationModal = this.toggleRegistrationModal.bind(this);
+        this.toggleRegistrationModal = this.toggleRegistrationModal.bind(this);
         this.selectFile = this.selectFile.bind(this);
     }
 
@@ -383,18 +384,24 @@ class SideBar extends Component {
                             className: 'error',
                         });
                         return false
+                    } else if (result.length === 0) {
+                        toast(`File Not verified`, {
+                            position: toast.POSITION.TOP_CENTER,
+                            className: 'error',
+                        });
+                    } else if (result[0].status === 'Verified') {
+
+                        this.updateFileList();
+                        toast(`${this.state.fileName} verified successfully !`, {
+                            position: toast.POSITION.TOP_CENTER,
+                            className: 'success',
+                        });
                     }
 
-                    this.updateFileList();
                     this.toggleVerifyModal();
-                    toast("Wow so easy !", {
-                        position: toast.POSITION.TOP_CENTER,
-                        className: 'black-background',
-                    });
-                    toast(`${this.state.fileName} verify successful !`, {
-                        position: toast.POSITION.TOP_CENTER,
-                        className: 'success',
-                    });
+                    this.setState({
+                        files: [],
+                    })
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
@@ -408,6 +415,7 @@ class SideBar extends Component {
             )
     }
 
+    // set selected quantity
     setSelectQuantity () {
         let options = [];
         if (this.state.selectedFile) {
@@ -421,13 +429,6 @@ class SideBar extends Component {
     render() {
         return (
             <aside className="side-bar border-right">
-                {/*<SnackBar*/}
-                    {/*show={true}                            //Boolean  - Required and Default - `false`*/}
-                    {/*timer={6000}                           //Number   - Optional and Default - `4000` (4 secs)*/}
-                {/*>*/}
-                    {/*// Pass any HTML element to render*/}
-                    {/*<p>Loading...</p>*/}
-                {/*</SnackBar>*/}
                 <ListGroup className="border-0">
                     {
                         this.state.fileList.map((f, i) =>
@@ -438,9 +439,7 @@ class SideBar extends Component {
                 <div className="d-flex flex-column align-items-stretch p-3">
                     <Button color="primary mb-2" onClick={this.toggleRegistrationModal}>Register File</Button>
                     <Button color="primary mb-2">Register with Link</Button>
-                    { this.state.selectedFile &&
                     <Button color="primary mb-2" onClick={this.toggleVerifyModal.bind(this)}>Verify File</Button>
-                    }
                     { (this.state.selectedFile && this.state.selectedFile.quantity > 0) &&
 
                         <div className="d-flex flex-column align-items-stretch">
@@ -523,8 +522,8 @@ class SideBar extends Component {
                     </ModalFooter>
                 </Modal>
 
-                {/*verify file modal*/}
-                <Modal isOpen={this.state.verifyModal} toggle={this.toggleVerifyModal} className={this.props.className}>
+                {/*Verify file modal*/}
+                <Modal isOpen={this.state.verifyModal} toggle={this.toggleVerifyModal.bind(this)} className={this.props.className}>
                     <ModalHeader>Verify</ModalHeader>
                     <ModalBody className="pl-4 pr-4">
                         <Dropzone onDrop={this.onDrop.bind(this)} multiple={false} className="dropzone" style={{
@@ -546,7 +545,7 @@ class SideBar extends Component {
                 </Modal>
 
                 {/* confirm modal */}
-                <Modal isOpen={this.state.confirmModal} toggle={this.toggleConfirmModal} className={this.props.className}>
+                <Modal isOpen={this.state.confirmModal} toggle={this.toggleConfirmModal.bind(this)} className={this.props.className}>
                     <ModalHeader>Confirm</ModalHeader>
                     <ModalBody className="pl-4 pr-4">
                         <p>{this.state.confirmMsg}</p>
@@ -557,8 +556,8 @@ class SideBar extends Component {
                     </ModalFooter>
                 </Modal>
 
-                {/* confirm modal */}
-                <Modal isOpen={this.state.fileTransferModal} toggle={this.toggleFileTransferModal} className={this.props.className}>
+                {/* file transfer modal */}
+                <Modal isOpen={this.state.fileTransferModal} toggle={this.toggleFileTransferModal.bind(this)} className={this.props.className}>
                     <ModalHeader>File Transfer</ModalHeader>
                     <ModalBody className="pl-4 pr-4">
                         <Row>

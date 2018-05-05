@@ -3,6 +3,7 @@ import AuthService from "../utils/AuthService";
 import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 
 import './login.css';
+import {Flip, toast, ToastContainer} from "react-toastify";
 
 class Login extends Component {
 
@@ -38,7 +39,11 @@ class Login extends Component {
                 }, 500)
             } else {
                 console.log("Got 401");
-                alert("Login failed");
+
+                toast(`Login Failed`, {
+                    position: toast.POSITION.TOP_CENTER,
+                    className: 'error',
+                });
             }
         })
     }
@@ -46,6 +51,7 @@ class Login extends Component {
     render() {
         return (
             <div className="login-wrapper">
+                <ToastContainer transition={Flip} autoClose={10000} closeButton={false} hideProgressBar={true}/>
                 <Form className="login-box p-3">
                     <FormGroup>
                         <Label for="exampleEmail">Username</Label>

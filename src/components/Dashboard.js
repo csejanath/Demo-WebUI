@@ -24,7 +24,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="wrapper">
-                <ToastContainer transition={Flip} closeButton={false} hideProgressBar={true}/>
+                <ToastContainer transition={Flip} autoClose={10000} closeButton={false} hideProgressBar={true}/>
                 <Header/>
                 <div className="main-content">
                     <SideBar setsSelectedFile={this.setsSelectedFile.bind(this)}></SideBar>
