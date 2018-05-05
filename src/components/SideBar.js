@@ -342,13 +342,14 @@ class SideBar extends Component {
                         });
                         return false
                     }
-                    this.updateFileList();
-                    this.setState({
-                        selectedFile: null,
-                    })
                     toast(`${this.state.selectedFile.fileName} cancel successful !`, {
                         position: toast.POSITION.TOP_CENTER,
                         className: 'success',
+                    });
+
+                    this.updateFileList();
+                    this.setState({
+                        selectedFile: null,
                     });
                 },
                 // Note: it's important to handle errors here
