@@ -32,7 +32,7 @@ class Dashboard extends Component {
                         <div className="p-3">{
                         <ul>
                             <li>File Name       : {this.state.selectedFile.fileName}</li>
-                            <li>file Size       : {this.state.selectedFile.fileSize}</li>
+                            <li>File Size       : {this.state.selectedFile.fileSize}</li>
                             <li>Nickname        : {this.state.selectedFile.nickname}</li>
                             <li>Remarks         : {this.state.selectedFile.remarks}</li>
                             <li>Document Type   : {this.state.selectedFile.doc_type}</li>
