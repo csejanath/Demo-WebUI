@@ -18,6 +18,12 @@ import {toast} from "react-toastify";
 class SideBar extends Component {
     Auth = new AuthService();
 
+    users = [{
+            name: 'admin',
+        },{
+            name: 'user',
+        }]
+
     constructor(props) {
         super(props);
         this.state = {
@@ -177,7 +183,18 @@ class SideBar extends Component {
                     }
 
                     let files = this.state.fileList.slice();
-                    files.push({fileName: this.state.fileName, fileSize: this.state.fileSize, nickname: this.state.nickname, remarks: this.state.remarks, doc_type: this.state.doc_type, quantity: this.state.quantity, myqty: this.state.quantity, totalqty: this.state.quantity, id: result.id});
+                    files.push({
+                        fileName: this.state.fileName,
+                        fileSize: this.state.fileSize,
+                        nickname: this.state.nickname,
+                        remarks: this.state.remarks,
+                        doc_type: this.state.doc_type,
+                        quantity: this.state.quantity,
+                        myqty: this.state.quantity,
+                        totalqty: this.state.quantity,
+                        id: result.id,
+                        hash: this.state.hash
+                    });
                     this.setState({
                         fileList: files,
                         fileName: "",
@@ -568,8 +585,10 @@ class SideBar extends Component {
                                     <Input className="border modal-input" type="select" name="otherUsername" id="otherUsername"
                                            onChange={this.handleInputChange.bind(this)}>
                                         <option value="">Select</option>
-                                        <option value="user">User</option>
-                                        <option value="admin">Admin</option>
+
+                                        {
+                                            this.users.map((f, i) => this.Auth.getProfile().username !== f.name ? <option key={i} value={f.name}>{f.name}</option> : false)
+                                        }
                                     </Input>
                                 </Col>
                             </FormGroup>

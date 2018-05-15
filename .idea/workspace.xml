@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4992bb2b-f79a-43d9-8641-c59a8b4c3fc2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/utils/alertService.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Dashboard.js" afterPath="$PROJECT_DIR$/src/components/Dashboard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/SideBar.js" afterPath="$PROJECT_DIR$/src/components/SideBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/dashboard.css" afterPath="$PROJECT_DIR$/src/components/dashboard.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,15 +21,46 @@
       <file leaf-file-name="SideBar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SideBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="588" column="32" lean-forward="true" selection-start-line="588" selection-start-column="32" selection-end-line="588" selection-end-column="32" />
+            <state relative-caret-position="270">
+              <caret line="589" column="69" lean-forward="true" selection-start-line="589" selection-start-column="69" selection-end-line="589" selection-end-column="69" />
               <folding>
                 <element signature="n#!!block;n#handleInputChange#0;n#SideBar#0" expanded="false" />
                 <element signature="n#!!block;n#updateFileList#0;n#SideBar#0" expanded="false" />
-                <marker date="1525443164962" expanded="false" signature="12887:13159" ph="{...}" />
-                <marker date="1525443164962" expanded="true" signature="13245:13376" ph="..." />
-                <marker date="1525443164962" expanded="false" signature="15258:19777" ph="&lt;Modal/&gt;" />
+                <element signature="n#!!block;n#selectFile#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#toggleConfirmModal#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#confirmCallback#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#toggleFileTransferModal#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#fileTransferConfirm#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#transferFile#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#toggleCancelConfirmModal#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#toggleVerifyModal#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#cancelFile#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#verifyFile#0;n#SideBar#0" expanded="false" />
+                <element signature="n#!!block;n#setSelectQuantity#0;n#SideBar#0" expanded="false" />
+                <marker date="1526359053639" expanded="true" signature="13981:13982" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="3" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -42,8 +68,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+            <state relative-caret-position="135">
+              <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -52,8 +78,8 @@
       <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+            <state relative-caret-position="375">
+              <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="26" selection-end-column="112" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -103,8 +129,8 @@
       <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="270">
+              <caret line="22" column="73" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -113,8 +139,8 @@
       <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+            <state relative-caret-position="720">
+              <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -156,6 +182,12 @@
       <find>fetch</find>
       <find>${result.error}</find>
       <find>confirm</find>
+      <find>wow</find>
+      <find>verifyModal</find>
+      <find>toggleRegistrationModal</find>
+      <find>alert(</find>
+      <find>compon</find>
+      <find>map</find>
     </findStrings>
     <replaceStrings>
       <replace>toggleRegistrationModal</replace>
@@ -188,15 +220,15 @@
         <option value="/Applications/MAMP/htdocs/janath/index.html" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/build/index.html" />
-        <option value="$PROJECT_DIR$/src/components/Login.js" />
         <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/src/utils/AuthService.js" />
         <option value="$PROJECT_DIR$/src/components/sidebar.css" />
         <option value="$PROJECT_DIR$/src/utils/alertService.js" />
         <option value="$PROJECT_DIR$/src/utils/AlertService.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/dashboard.css" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/Dashboard.js" />
+        <option value="$PROJECT_DIR$/src/components/Login.js" />
         <option value="$PROJECT_DIR$/src/components/SideBar.js" />
       </list>
     </option>
@@ -230,7 +262,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,7 +327,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,6 +336,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -422,7 +455,10 @@
       <workItem from="1524231364984" duration="676000" />
       <workItem from="1524416605310" duration="1064000" />
       <workItem from="1525328598323" duration="7737000" />
-      <workItem from="1525408652936" duration="8278000" />
+      <workItem from="1525408652936" duration="10555000" />
+      <workItem from="1525674502636" duration="2074000" />
+      <workItem from="1526285509226" duration="1075000" />
+      <workItem from="1526358173900" duration="914000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1523531256689</created>
@@ -473,27 +509,54 @@
       <option name="project" value="LOCAL" />
       <updated>1525440103563</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add success error notification for fetch">
+      <created>1525443234511</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1525443234511</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update dependencies">
+      <created>1525443381920</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1525443381920</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix issues">
+      <created>1525532489301</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1525532489301</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Cancel file error fix">
+      <created>1525538871520</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1525538871520</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56712000" />
+    <option name="totallyTimeSpent" value="63052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16877638" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="ReactNative" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16877638" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -501,6 +564,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -546,14 +610,18 @@
     <MESSAGE value="register file name not show fixes" />
     <MESSAGE value="Transfer file and login fail function" />
     <MESSAGE value="Cancel file and verify file function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cancel file and verify file function" />
+    <MESSAGE value="add success error notification for fetch" />
+    <MESSAGE value="update dependencies" />
+    <MESSAGE value="fix issues" />
+    <MESSAGE value="Cancel file error fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cancel file error fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/SideBar.js</url>
-          <line>169</line>
+          <line>176</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="2" />
@@ -601,9 +669,18 @@
           <folding>
             <element signature="n#!!block;n#handleInputChange#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#updateFileList#0;n#SideBar#0" expanded="false" />
-            <marker date="1525443164962" expanded="false" signature="12887:13159" ph="{...}" />
-            <marker date="1525443164962" expanded="true" signature="13245:13376" ph="..." />
-            <marker date="1525443164962" expanded="false" signature="15258:19777" ph="&lt;Modal/&gt;" />
+            <element signature="n#!!block;n#selectFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#confirmCallback#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleFileTransferModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#fileTransferConfirm#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#transferFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleCancelConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleVerifyModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#cancelFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#verifyFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#setSelectQuantity#0;n#SideBar#0" expanded="false" />
+            <marker date="1526359053639" expanded="true" signature="13981:13982" ph="..." />
           </folding>
         </state>
       </provider>
@@ -638,7 +715,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-          <folding />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -705,7 +784,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-          <folding />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -740,9 +821,18 @@
           <folding>
             <element signature="n#!!block;n#handleInputChange#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#updateFileList#0;n#SideBar#0" expanded="false" />
-            <marker date="1525443164962" expanded="false" signature="12887:13159" ph="{...}" />
-            <marker date="1525443164962" expanded="true" signature="13245:13376" ph="..." />
-            <marker date="1525443164962" expanded="false" signature="15258:19777" ph="&lt;Modal/&gt;" />
+            <element signature="n#!!block;n#selectFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#confirmCallback#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleFileTransferModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#fileTransferConfirm#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#transferFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleCancelConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleVerifyModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#cancelFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#verifyFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#setSelectQuantity#0;n#SideBar#0" expanded="false" />
+            <marker date="1526359053639" expanded="true" signature="13981:13982" ph="..." />
           </folding>
         </state>
       </provider>
@@ -867,34 +957,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="2" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -916,30 +982,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/AlertService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/AlertService.js" />
     <entry file="file://$PROJECT_DIR$/src/components/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -950,24 +993,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        <state relative-caret-position="375">
+          <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="26" selection-end-column="112" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="3" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="73" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SideBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="588" column="32" lean-forward="true" selection-start-line="588" selection-start-column="32" selection-end-line="588" selection-end-column="32" />
+        <state relative-caret-position="270">
+          <caret line="589" column="69" lean-forward="true" selection-start-line="589" selection-start-column="69" selection-end-line="589" selection-end-column="69" />
           <folding>
             <element signature="n#!!block;n#handleInputChange#0;n#SideBar#0" expanded="false" />
             <element signature="n#!!block;n#updateFileList#0;n#SideBar#0" expanded="false" />
-            <marker date="1525443164962" expanded="false" signature="12887:13159" ph="{...}" />
-            <marker date="1525443164962" expanded="true" signature="13245:13376" ph="..." />
-            <marker date="1525443164962" expanded="false" signature="15258:19777" ph="&lt;Modal/&gt;" />
+            <element signature="n#!!block;n#selectFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#confirmCallback#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleFileTransferModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#fileTransferConfirm#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#transferFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleCancelConfirmModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#toggleVerifyModal#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#cancelFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#verifyFile#0;n#SideBar#0" expanded="false" />
+            <element signature="n#!!block;n#setSelectQuantity#0;n#SideBar#0" expanded="false" />
+            <marker date="1526359053639" expanded="true" signature="13981:13982" ph="..." />
           </folding>
         </state>
       </provider>
